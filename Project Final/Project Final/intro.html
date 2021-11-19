@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page</title>
+    <style>
+        body{
+            background-image: url('background.jpg');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position:center;
+        }
+        .heading{
+            position: absolute;
+            top: 0%;
+            left: 25%;
+            text-align: center;
+            font-size: 80px;
+            font-weight: 200;
+            font-style: italic;
+            color: #fff;
+            z-index: 2;
+        }
+        .circle{
+            transform-style:preserve-3d ;
+            animation: rotateText 10s linear infinite;
+        }
+        .circle span{
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: rgb(82, 160, 108);
+            color:rgb(8, 48, 121);
+            font-size: 3em;
+            transform-origin:center ;
+            padding: 5px 11px;
+            transform-style:preserve-3d ;
+            transform: rotateY(calc(var(--i)*calc(360deg/54)))
+            translateZ(260px);
+            
+        }
+        @keyframes rotateText{
+            0%{
+                transform:perspective(1000px) rotateY(360deg) rotateX(15deg) translateY(-30px);
+            }
+            100%{
+                transform:perspective(1000px) rotateY(0deg) rotateX(15deg) translateY(-30px);
+            }
+        }
+        section{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            transform-style:preserve-3d;
+        }
+        .earth{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 300px;
+            height: 300px;
+            background:url('world.jpg');
+            background-repeat: repeat-x;
+            background-size: cover;
+            border-radius: 50%;
+            box-shadow: inset 0 0 20px rgba(0,0,0,1), 0 0 50px #5069ff;
+            animation: rotateEarth 10s linear infinite;
+        }
+        @keyframes rotateEarth{
+            0%{
+                background-position:0 0;
+            }
+            100%{
+                background-position: -750px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="heading">Weather Forcast Website</div>
+        <a href="index.html"><div class="earth"></div></a>
+        <div class="circle"> 
+            <span style="--i:1">C</span>
+            <span style="--i:2">l</span>
+            <span style="--i:3">i</span>
+            <span style="--i:4">c</span>
+            <span style="--i:5">k</span>
+            <span style="--i:6">-</span>
+            <span style="--i:7">o</span>
+            <span style="--i:8">n</span>
+            <span style="--i:9">-</span>
+            <span style="--i:10">t</span>
+            <span style="--i:11">h</span>
+            <span style="--i:12">e</span>
+            <span style="--i:13">-</span>
+            <span style="--i:14">e</span>
+            <span style="--i:15">a</span>
+            <span style="--i:16">r</span>
+            <span style="--i:17">t</span>
+            <span style="--i:18">h</span>
+            <span style="--i:19">-</span>
+            <span style="--i:20">t</span>
+            <span style="--i:21">o</span>
+            <span style="--i:22">-</span>
+            <span style="--i:23">g</span>
+            <span style="--i:24">e</span>
+            <span style="--i:25">t</span>
+            <span style="--i:26">-</span>
+            <span style="--i:27">u</span>
+            <span style="--i:28">p</span>
+            <span style="--i:29">d</span>
+            <span style="--i:30">a</span>
+            <span style="--i:31">t</span>
+            <span style="--i:32">e</span>
+            <span style="--i:33">-</span>
+            <span style="--i:34">f</span>
+            <span style="--i:35">o</span>
+            <span style="--i:36">r</span>
+            <span style="--i:37">-</span>
+            <span style="--i:38">d</span>
+            <span style="--i:39">i</span>
+            <span style="--i:40">f</span>
+            <span style="--i:41">f</span>
+            <span style="--i:42">e</span>
+            <span style="--i:43">r</span>
+            <span style="--i:44">e</span>
+            <span style="--i:45">n</span>
+            <span style="--i:46">t</span>
+            <span style="--i:47">-</span>
+            <span style="--i:48">P</span>
+            <span style="--i:49">l</span>
+            <span style="--i:50">a</span>
+            <span style="--i:51">c</span>
+            <span style="--i:52">e</span>
+            <span style="--i:53">!</span>
+            <span style="--i:54">!</span>
+</div>
+    </section>
+    
+</body>
+</html>

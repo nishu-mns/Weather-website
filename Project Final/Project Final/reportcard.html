@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forecast</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+        <script src="report.js" defer></script>
+    <style>
+        /* .heading h1 {
+            text-align: center;
+            font-size: 80px;
+            font-weight: 200;
+            font-style: italic;
+            top: -60%;
+            color: rgb(255, 240, 252);
+            margin-bottom: -20px;
+        }
+        .nav-item :hover {
+            background-color: rgb(151, 170, 255);
+            border: 2px solid rgb(52, 79, 199);
+            border-radius: 10px;
+            color: white;
+        }
+
+        .nav-item {
+            font-size: 20px;
+            color: rgb(52, 79, 199);
+            border: 2px solid rgb(52, 79, 199);
+            border-radius: 10px;
+            margin-right: 5px;
+        } */
+        .cards{
+            width: 100%;
+            justify-content: center;
+
+        }
+       
+
+        body {
+            background-image: url('wheather.png');
+            background-size: 100% 100%;
+            margin: auto;
+            overflow-x: hidden;
+            background-repeat: no-repeat;
+            
+            /* background-size: 1400px 1100px; */
+        }
+        .parent2 {
+  top:15px;
+  left:15px;
+  position:fixed;
+ display:block;
+  width:100px;
+  height:100px;
+  background-color:transparent;
+  border-radius:50%;
+  z-index:20;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+}
+.test1 {
+  width:60%;
+  height:60%;
+  background-color:dimGray;
+  border-radius:50%;
+  position:absolute;
+  color:white;
+  text-align:center;
+  line-height:70px;
+    top:25%;
+  left:25%;
+  z-index:19;
+  transition: all 500ms cubic-bezier(0.680, -0.550, 0.265, 1.550);
+    position:absolute;
+}
+.test2 {
+  width:60%;
+  height:60%;
+  background-color:dimGray;
+  border-radius:50%;
+  position:absolute;
+  color:white;
+  text-align:center;
+  line-height:70px;
+    top:25%;
+  left:25%;
+  z-index:19;
+  transition: all 500ms cubic-bezier(0.680, -0.550, 0.265, 1.550) .2s;
+}
+.test3 {
+  width:60%;
+  height:60%;
+  background-color:dimGray;
+  border-radius:50%;
+  position:absolute;
+  color:white;
+  text-align:center;
+  line-height:70px;
+    top:25%;
+  left:25%;
+  transition: all 500ms cubic-bezier(0.680, -0.550, 0.265, 1.550) .4s;  
+}
+  .test4 {
+  width:60%;
+  height:60%;
+  background-color:dimGray;
+  border-radius:50%;
+  position:absolute;
+  color:white;
+  text-align:center;
+  line-height:70px;
+  top:25%;
+  left:25%;
+  transition: all 500ms cubic-bezier(0.680, -0.550, 0.265, 1.550) .6s;  
+}
+.mask2 {
+  top:15px;
+  left:15px;
+  width:100px;
+  height:100px;
+  background:darkSlateGray;
+  border-radius:50%;
+  position:absolute;
+  z-index:21;
+  color:white;
+  text-align:center;
+  line-height:120px;
+  cursor:pointer;
+  position:fixed;
+}
+    </style>
+</head>
+
+<body>
+    
+    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light static-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"
+                style="margin-left: -50px; color: rgb(52, 79, 199); font-weight: bold; font-size: 25px;">
+                <img src="https://www.clipartmax.com/png/middle/234-2347009_cloud-forecast-sun-weather-icon-weather-icon.png"
+                    alt="..." width="80" height="54">
+                Weather
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="card2.html">Forecast</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="nowcast.html">Nowcast</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="teamsection.html">Team section</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Research</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav> -->
+    <div class="parent2">
+        <div class="test1"><a href="teamsection.html"><img data-toggle="tooltip" title="Meet Our Team" style="justify-content: center; padding-bottom: 15px;" src="icoooon.png" width="50px" height="50px"></a></div>
+        <div class="test2"><a href="nowcast.html"><img data-toggle="tooltip" title="See Hourly Forecast" style="justify-content: center; padding-bottom: 15px;" src="iconssss.png" width="50px" height="50px"></a></div>
+        <div class="test3"><a href="index.html"><img data-toggle="tooltip" title="See Current time forecast"style="justify-content: center; padding-bottom: 15px;" src="iconss.png" width="50px" height="50px"></a></div>
+        <div class="test4"><a href="reportcard.html"><img data-toggle="tooltip" title="See Weekly Forecast" style="justify-content: center; padding-bottom: 15px;" src="icoon.png" width="50px" height="50px"></a></div>
+        <div class="mask2"><img style="justify-content: center;  padding-bottom: 15px;" src="icooon.png" width="70px" height="70px"></div>
+      </div>
+
+    <!-- <div class="heading">
+        <h1><b>Forecast</b></h1>
+    </div> -->
+    <center>
+    <br>
+        <h1 id="head" style="color: rgb(228, 226, 226); font-size: xxxx-large; font-weight: 700;">Weekly Weather Forecast</h1><br>
+        <input type="text" class="search-bar" id="cityInput" style="border: none;
+        outline: none;
+        padding: 0.400em 1em;
+        border-radius: 24px;
+        background: #fdfdfdf3;
+        color: rgb(0, 0, 0);
+        font-family: inherit;
+        font-size: 105%;
+        width: calc(100% - 800px);" placeholder="Search for the city/place" >
+        <br><br><button type="button" class="btn btn-primary" onclick="report()">Search</button>        
+        <br><br><h2 id="cityName" style="color: white;">CityName</h2>
+    </center>
+    <div class="cards">
+    <div class="row row-cols-xs-1 row-cols-md-2 row-cols-sm-2  row-cols-lg-3 g-5 mt-5">
+
+        <div class="col">
+            <div class="card" id="day01" style="align-items: center; background-color: rgba(0, 14, 141, 0.616); box-shadow: 0 4px 8px 4px #b8b894;  width: 350px; height: 300px; margin-left: 30px; background-size: auto;">
+                
+                <!-- <h4 class="card-header">Thursday</h4>
+                <img src="img1.png" class="card-img-top" alt="..."> -->
+                <div class="card-body" >
+                    <div id="icons">
+                    <p class="weather" id="day1" style="font-weight: 700; font-size: large; color: white;"></p>
+                    <div class="image"><img src="dots.png" class="imgClass" id="img1"></div>
+                    <p class="description" id="description1" style="font-weight: 700; font-size: large; color: white;">Loading...</p>
+                    <p class="humidity" id="humidity1" style="font-weight: 700; font-size: large; color: white;">Loading...</p>
+                    <p class="wind" id="wind1" style="font-weight: 700; font-size: large; color: white;">Loading...</p>
+                    <!-- <h5 class="card-title">Mostly Sunny</h5>
+                    <p class="card-text">Date : 21 oct, 2021<br>
+                        Temperature : 30&#8451<br>
+                        Mostly Sunny<br>
+                        City : Rajkot</p> -->
+                </div></div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card" id="day02" style="align-items: center; background-color: rgba(0, 14, 141, 0.616); box-shadow: 0 4px 8px 4px #b8b894;  width: 350px; height: 300px; margin-left: 30px;">
+                <!-- <h4 class="card-header">Friday</h4>
+                <img src="img5.png" class="card-img-top" alt="..."> -->
+                <div class="card-body">
+                   
+                        <div id="icons">
+                        <p class="weather" id="day2" style="font-weight: 700; font-size: large; color: white;"></p>
+                        <div class="image"><img src="dots.png" class="imgClass" id="img2"></div>
+                        <p class="description" id="description2" style="font-weight: 700; font-size: large; color: white;">Loading...</p>
+                        <p class="humidity" id="humidity2" style="font-weight: 700; font-size: large; color: white;">Loading...</p>
+                        <p class="wind" id="wind2" style="font-weight: 700; font-size: large; color: white;">Loading...</p>
+                        <!-- <h5 class="card-title">Mostly Sunny</h5>
+                        <p class="card-text">Date : 21 oct, 2021<br>
+                            Temperature : 30&#8451<br>
+                            Mostly Sunny<br>
+                            City : Rajkot</p> -->
+                    </div>
+                    <!-- <h5 class="card-title">Rainy</h5>
+                    <p class="card-text">Date : 22 oct, 2021<br>
+                        Temperature : 30&#8451<br>
+                        Rainy<br>
+                        City : Rajkot</p> -->
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card" id="day03" style="align-items: center; background-color: rgba(1, 9, 128, 0.493); box-shadow: 0 4px 8px 4px #b8b894;  width: 350px; height: 300px; margin-left: 30px;">
+                <!-- <h4 class="card-header">Saturday</h4>
+                <img src="img3.png" class="card-img-top" alt="..."> -->
+                <div class="card-body">
+                    <div class="icons">
+                        <p class="weather" id="day3" style="font-weight: 700; font-size: large; color: white;"></p>
+                <div class="image"><img src="dots.png" class="imgClass" id="img3"></div>
+                <p class="description" id="description3" style="font-weight: 700; font-size: large; color: white;">Loading...</p>
+                <p class="humidity" id="humidity3" style="font-weight: 700; font-size: large; color: white;">Loading...</p>
+                <p class="wind" id="wind3" style="font-weight: 700; font-size: large; color: white;">Loading...</p>
+                    </div>
+                    <!-- <h5 class="card-title">Partly Cloudy</h5>
+                    <p class="card-text">Date : 23 oct, 2021<br>
+                        Temperature : 30&#8451<br>
+                        Partly Cloudy<br>
+                        City : Rajkot</p> -->
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card" id="day04" style="align-items: center; background-color: rgba(0, 14, 141, 0.616); box-shadow: 0 4px 8px 4px #b8b894;  width: 350px; height: 300px; margin-left: 30px;">
+                <!-- <h4 class="card-header">Sunday</h4>
+                <img src="img8.png" class="card-img-top" alt="..."> -->
+                <div class="card-body">
+                    <div class="icons">
+                        <p class="weather" id="day4" style="font-weight: 700; font-size: large; color: white;"></p>
+                        <div class="image"><img src="dots.png" class="imgClass" id="img4"></div>
+                        <p class="description" id="description4" style="font-weight: 700; font-size: large; color: white;">Loading...</p>
+                        <p class="humidity" id="humidity4" style="font-weight: 700; font-size: large; color: white;">Loading...</p>
+                        <p class="wind" id="wind4" style="font-weight: 700; font-size: large; color: white;">Loading...</p>
+                    </div>
+                    <!-- <h5 class="card-title">Cloudy</h5>
+                    <p class="card-text">Date : 24 oct, 2021<br>
+                        Temperature : 30&#8451<br>
+                        Cloudy<br>
+                        City : Rajkot</p> -->
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card" id="day05" style="align-items: center; background-color: rgba(0, 14, 141, 0.616); box-shadow: 0 4px 8px 4px #b8b894;  width: 350px; height: 300px; margin-left: 30px;">
+                <!-- <h4 class="card-header">Monday</h4>
+                <img src="img5.png" class="card-img-top" alt="..."> -->
+                <div class="card-body">
+                    <div class="icons">
+                    <p class="weather" id="day5" style="font-weight: 700; font-size: large; color: white;"></p>
+                    <div class="image"><img src="dots.png" class="imgClass" id="img5"></div>
+                    <p class="description" id="description5" style="font-weight: 700; font-size: large; color: white;">Loading...</p>
+                    <p class="humidity" id="humidity5" style="font-weight: 700; font-size: large; color: white;">Loading...</p>
+                    <p class="wind" id="wind5" style="font-weight: 700; font-size: large; color: white;">Loading...</p>
+                    <!-- <h5 class="card-title">Rainy</h5>
+                    <p class="card-text">Date : 25 oct, 2021<br>
+                        Temperature : 30&#8451<br>
+                        Rainy<br>
+                        City : Rajkot</p> -->
+                </div></div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card" id="day06" style="align-items: center; background-color: rgba(0, 14, 141, 0.616); box-shadow: 0 4px 8px 4px #b8b894;  width: 350px; height: 300px; margin-left: 30px;">
+                <!-- <h4 class="card-header">Tuesday</h4>
+                <img src="img9.png" class="card-img-top" alt="..."> -->
+                <div class="card-body">
+                    <div class="icons">
+                        <p class="weather" id="day6" style="font-weight: 700; font-size: large; color: white;"></p>
+                        <div class="image"><img src="dots.png" class="imgClass" id="img6"></div>
+                        <p class="description" id="description6" style="font-weight: 700; font-size: large; color: white;">Loading...</p>
+                        <p class="humidity" id="humidity6" style="font-weight: 700; font-size: large; color: white;">Loading...</p>
+                        <p class="wind" id="wind6" style="font-weight: 700; font-size: large; color: white;">Loading...</p>
+                    </div>
+                    <!-- <h5 class="card-title">Cloudy</h5>
+                    <p class="card-text">Date : 26 oct, 2021<br>
+                        Temperature : 30&#8451<br>
+                        Cloudy<br>
+                        City : Rajkot</p> -->
+                </div>
+            </div>
+        </div>
+       
+    </div>
+    </div>
+</body>
+
+</html>
